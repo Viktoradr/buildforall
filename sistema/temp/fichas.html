@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Administração</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Content/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Content/node-waves/css/waves.min.css" />
+    <link rel="stylesheet" href="Content/animate/animate.min.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <link rel="stylesheet" href="Content/bootstrap-table/css/bootstrap-table.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body class="bg-light">
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalCadFicha" tabindex="-1" role="dialog" aria-labelledby="modalCadFichaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalitle"></h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="formFichaNome" class="col-form-label">Nome:</label>
+                            <input type="text" class="form-control form-control-sm" id="formFichaNome">
+                        </div>
+                        <div class="form-group">
+                            <label for="formFichaObs" class="col-form-label">Observação:</label>
+                            <textarea class="form-control form-control-sm" id="formFichaObs"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnFecharFicha" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
+                    <button id="btnAddFicha" type="button" class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCadFichaExercicio" tabindex="-1" role="dialog" aria-labelledby="modalCadFichaExercicioLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="formExercicios" class="col-form-label">Exercício:</label>
+                            <select class="form-control form-control-sm" id="formExercicios">
+                                <option value="0">Selecione...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="formQtdSerie">Qtd Série</label>
+                            <input type="text" class="form-control form-control-sm" id="formQtdSerie">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="formRep">Rep</label>
+                            <input type="text" class="form-control form-control-sm" id="formRep">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="formCarga">Carga</label>
+                            <input type="text" class="form-control form-control-sm" id="formCarga">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="formObs" class="col-form-label">Observação:</label>
+                            <select class="form-control form-control-sm" id="formObs">
+                                <option value="0">Selecione...</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnFecharFichaExercicio" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
+                    <button id="btnAddFichaExercicio" type="button" class="btn btn-primary btn-sm">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="bars" href="javascript:void(0);"></a>
+                    <a class="navbar-brand" href="home.html">Rstraining Admin</a>
+
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation"></button>
+                </div>
+
+                <!--<a class="navbar-brand" href="javascript:void(0);"><i class="fa fa-bars"></i></a>-->
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+
+                    <ul class="nav d-flex flex-row-reverse">
+                        <li class="nav-item p-1">
+                            <a href="javascript:void(0);" class="nav-link" data-toggle="dropdown" role="button">
+                                <i class="material-icons">notifications</i>
+                                <span class="badge">4</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">NOTIFICATIONS</li>
+                                <li class="body">
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="icon-circle bg-success">
+                                                    <i class="material-icons">person_add</i>
+                                                </div>
+                                                <div class="menu-info">
+                                                    <h4>12 new members joined</h4>
+                                                    <p>
+                                                        <i class="material-icons">access_time</i> 14 mins ago
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer text-center f-14">
+                                    <a href="javascript:void(0);">View All Notifications</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item p-1">
+                            <a href="javascript:void(0);" class="nav-link" data-toggle="dropdown" role="button">
+                                <i class="material-icons">flag</i>
+                                <span class="badge">9</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">TASKS</li>
+                                <li class="body">
+                                    <ul class="menu tasks">
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <h4>
+                                                    Footer display issue
+                                                    <small>32%</small>
+                                                </h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer text-center f-14">
+                                    <a href="javascript:void(0);">View All Tasks</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <aside id="leftsidebar" class="sidebar">
+            <div class="sidebar-info">
+                <div class="image">
+                    <img src="images/user.jpg" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="info-profile f-14" id="info-profile-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+                    <div class="info-profile f-12" id="info-profile-email"></div>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <div class="nav flex-column nav-pills p-1" aria-orientation="vertical">
+                    <a class="nav-link d-flex align-items-center active" href="home.html">
+                        <div class="p-1 text-center"><i class="fa fa-home"></i></div>
+                        <span class="p-1">Home</span>
+                    </a>
+                    <a class="nav-link d-flex align-items-center" href="profile.html">
+                        <div class="p-1 text-center"><i class="fa fa-address-card"></i></div>
+                        <span class="p-1">Profile</span>
+                    </a>
+                    <a class="nav-link d-flex align-items-center" href="admin.html">
+                        <div class="p-1 text-center"><i class="fa fa-cogs p-1"></i></div>
+                        <span class="p-1">Administração</span>
+                    </a>
+                    <a class="nav-link d-flex align-items-center" href="usuario.html">
+                        <div class="p-1 text-center"><i class="fa fa-user p-1"></i></div>
+                        <span class="p-1">Usuário</span>
+                    </a>
+                    <a class="nav-link d-flex align-items-center" href="professor.html">
+                        <div class="p-1 text-center"><i class="fa fa-graduation-cap p-1"></i></div>
+                        <span class="p-1">Professor</span>
+                    </a>
+                    <a class="nav-link d-flex align-items-center" href="amigos.html">
+                        <div class="p-1 text-center"> <i class="fa fa-users p-1"></i></div>
+                        <span class="p-1">Amigos</span>
+                    </a>
+                    <a class="nav-link d-flex align-items-center" href="fichas.html">
+                        <div class="p-1 text-center"><i class="fa fa-file-text p-1"></i></div>
+                        <span class="p-1">Fichas</span>
+                    </a>
+                    <a class="nav-link d-flex align-items-center" href="evolucao.html">
+                        <div class="p-1 text-center"><i class="fa fa-bar-chart p-1"></i></div>
+                        <span class="p-1">Evolução</span>
+                    </a>
+                    <a class="nav-link d-flex align-items-center" href="mensagens.html">
+                        <div class="p-1 text-center"><i class="fa fa-envelope p-1"></i></div>
+                        <span class="p-1">Mensagens</span>
+                    </a>
+                    <a class="nav-link d-flex align-items-center" href="comunidade.html">
+                        <div class="p-1 text-center"><i class="fa fa-hashtag p-1"></i></div>
+                        <span class="p-1">Comunidade</span>
+                    </a>
+                </div>
+            </div>
+
+            <footer class="sidebar-footer footer-fixed-top page-footer font-small bg-primary text-white text-center pt-4">
+                <div class="copyright">
+                    &copy; 2018 <a href="http://buildforall.com.br/">Buildforall.com.br</a>
+                </div>
+
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </footer>
+        </aside>
+    </section>
+
+    <main>
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row mt-3">
+
+                    <div class="col-12">
+                        <form>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Adicionar <small>Série</small></h5>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="formID">Usuario ID</label>
+                                            <input type="number" class="form-control form-control-sm" min="0" id="formID" name="formID">
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="formTipoGrupoSerie">Nível</label>
+                                            <select class="form-control form-control-sm" id="formTipoGrupoSerie" name="formTipoGrupoSerie">
+                                                <option value="0">Selecione...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div id="divInfoSerie" class="d-flex flex-row">
+
+                                        <div class="card w-25">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Adicionar <small>Ficha</small></h5>
+                                                <div class="divChecks"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card ml-3 w-75">
+                                            <div class="header d-flex pb-0">
+                                                <div class="w-100">
+                                                    <h5 class="card-title">Adicionar <small>Exercícios</small></h5>
+                                                </div>
+
+                                                <a class="nav-link pr-0" href="javascript:void(0);" id="btnAddExercicio" data-toggle="modal" data-target="#modalCadFichaExercicio">
+                                                    <i class="fa fa-plus p-1"></i>
+                                                </a>
+                                            </div>
+                                            <div class="body">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <div class="list-group" id="list-tab-fichas" role="tablist"></div>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <div class="tab-content" id="nav-tabContent"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="flex-row">
+                                        <button id="btnAddSerie" type="button" class="btn btn-primary btn-sm">Adicionar Série</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card mb-3">
+                            <div class="header d-flex">
+                                <div class="w-100">
+                                    <h2>Séries <small>Description text here...</small></h2>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive bg-white">
+                                    <table id="tableSerie" class="table table-sm" data-toggle="table" data-unique-id="ID" data-page-size="5" data-page-list="[5, 10, 15, 20] ">
+                                        <thead class="thead-dark">
+                                            <tr class="text-white">
+                                                <th data-field="ID" data-width="40">#</th>
+                                                <th data-field="Nivel">Nível</th>
+                                                <th data-field="DataCriacao">Dt. Criação</th>
+                                                <th data-field="DataCompartilhado">Dt. Share</th>
+                                                <th data-field="Ativo" data-formatter="isActive">Ativo</th>
+                                                <th data-field="Compartilhado" data-formatter="isActive">Compartilhado</th>
+                                                <th data-field="Action">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="Content/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="Content/jquery-popper/js/popper.min.js"></script>
+    <script type="text/javascript" src="Content/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Content/bootstrap-table/js/bootstrap-table.js"></script>
+    <script type="text/javascript" src="Content/bootstrap-table/js/bootstrap-table-pt-PT.js"></script>
+    <script type="text/javascript" src="Content/node-waves/js/waves.min.js"></script>
+    <script type="text/javascript" src="Content/sweetalert/js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="js/funcoes.js"></script>
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/classes.js"></script>
+
+
+    <script>
+        $(function() {
+
+            var serie = new GrupoFichaViewModel();
+            var _ID = 0;
+
+            var getUsuario = function() {
+                var usuario = new UsuarioViewModel();
+                usuario.ID = $("#formID").val();
+                return usuario;
+            };
+
+            var getSerie = function(_ID) {
+                var grupo = new GrupoFichaViewModel();
+                grupo.ID = _ID;
+                grupo.Usuario.ID = $("#formID").val();
+                return grupo;
+            };
+
+            var Compartilhar = function(_ID) {
+                $.ajax({
+                    url: "http://localhost:56619/api/Grupo/Compartilhar",
+                    type: "POST",
+                    data: getSerie(_ID),
+                    success: function(retorno) {
+                        if (retorno) grupos(getUsuario());
+                        else sweetalert.showBasicMessage("Não foi possível realizar esta ação");
+                    },
+                    error: function(retorno) {}
+                });
+            };
+
+            var Favoritar = function(_ID) {
+                $.ajax({
+                    url: "http://localhost:56619/api/Grupo/Favoritar",
+                    type: "POST",
+                    data: getSerie(_ID),
+                    success: function(retorno) {
+                        if (retorno) grupos(getUsuario());
+                        else sweetalert.showBasicMessage("Não foi possível realizar esta ação");
+                    },
+                    error: function(retorno) {}
+                });
+            };
+
+            var Ativar = function(_ID) {
+                $.ajax({
+                    url: "http://localhost:56619/api/Grupo/Ativar",
+                    type: "POST",
+                    data: getSerie(_ID),
+                    success: function(retorno) {
+                        if (retorno) grupos(getUsuario());
+                        else sweetalert.showBasicMessage("Não foi possível realizar esta ação");
+                    },
+                    error: function(retorno) {}
+                });
+            };
+
+            var action = function(retorno) {
+                $.each(retorno, function(index, item) {
+                    let share = '<a href="javascript:void(0);" data-row=" ' + item.ID + ' " class="compartilhar"><i class="fa fa-paper-plane text-success mr-2"></i></a>';
+
+                    let fav = item.Favorito ?
+                        '<a href="javascript:void(0);" data-row="' + item.ID + '" class="favoritar"><i class="fa fa-star text-warning mr-2"></i></a>' :
+                        '<a href="javascript:void(0);" data-row="' + item.ID + '" class="favoritar"><i class="fa fa-star-o text-warning mr-2"></i></a>';
+
+                    let ativo = item.Ativo ?
+                        '<a href="javascript:void(0);" data-row=" ' + item.ID + ' " class="Ativar"><i class="fa fa-circle text-primary mr-2"></i></a>' :
+                        '<a href="javascript:void(0);" data-row=" ' + item.ID + ' " class="Ativar"><i class="fa fa-circle-o text-primary mr-2"></i></a>';
+
+                    item.Action = share + fav + ativo;
+                });
+                return retorno;
+            }
+
+            var grupos = function(usuario) {
+                $.ajax({
+                    url: 'http://localhost:56619/api/Grupo/GetAll',
+                    type: 'POST',
+                    data: usuario,
+                    success: function(retorno) {
+                        console.log('GrupoSerie', retorno);
+                        $('#tableSerie').bootstrapTable('load', action(retorno));
+
+                        $(".compartilhar").bind("click", function() {
+                            Compartilhar($(this).attr('data-row'));
+                        });
+
+                        $(".favoritar").bind("click", function() {
+                            Favoritar($(this).attr('data-row'));
+                        });
+
+                        $(".Ativar").bind("click", function() {
+                            Ativar($(this).attr('data-row'));
+                        });
+                    },
+                    error: function(retorno) {}
+                });
+            }
+
+            var openModal = function($modal, title) {
+                $modal.on('show.bs.modal', function(event) {
+                    var modal = $(this)
+                    modal.find('.modal-title').text(title);
+                }).modal('show');
+            };
+
+            var removerFicha = function() {
+                var index = _ID - 1;
+                serie.ListaFicha = jQuery.grep(serie.ListaFicha, function(value) {
+                    return value != serie.ListaFicha[index];
+                });
+            };
+
+            $("#formTipoGrupoSerie").change(function() {
+                if ($(this).val() > 0) {
+                    serie.TipoGrupoFicha.ID = $(this).val();
+                }
+            });
+
+            $('#btnFecharFicha').click(function() {
+                var index = _ID - 1;
+                $('input[id=check' + index + ']').prop('checked', false);
+            });
+
+            $('#btnAddFicha').click(function() {
+                if ($('#formFichaNome').val() != "") {
+                    var index = _ID - 1;
+                    var check = $('div .form-check').find('input[id=check' + index + ']');
+
+                    var ficha = new FichaViewModel();
+                    ficha.Nome = $("#formFichaNome").val();
+                    ficha.TipoFicha = check.val();
+                    ficha.TipoFichaDescricao = check.parent().find('label').html();
+                    serie.ListaFicha.push(ficha);
+
+                    $('div .form-check').next().find('input[id=check' + _ID + ']').attr('disabled', false);
+                    $('#formFichaNome').val("");
+                    $('#formFichaObs').val("");
+
+                    MontarTabList(serie.ListaFicha, $('#list-tab-fichas'), $("#nav-tabContent"));
+
+                    $('#list-tab-fichas a[href="#list-ex-' + index + '"]').tab("show");
+
+                    openModal($("#modalCadFichaExercicio"), $("#formFichaNome").val());
+                    $('#modalCadFicha').modal('hide');
+                }
+            });
+
+            $('#btnAddFichaExercicio').click(function() {
+                if ($('#formExercicios').val() > 0 &&
+                    $('#formQtdSerie').val() != "" &&
+                    $('#formRep').val() != "" &&
+                    $('#formCarga').val() != "" &&
+                    $('#formObs').val() > 0) {
+
+                    var index = Number($('#list-tab-fichas a.active').attr('data-index'));
+
+                    var fichaExercicio = new FichaExercicioViewModel();
+                    fichaExercicio.Carga = $('#formCarga').val();
+                    fichaExercicio.Observacao = $('#formObs').val();
+                    fichaExercicio.ObservacaoDescricao = $('#formObs option:selected').text();
+                    fichaExercicio.QuantidadeRepeticao = $('#formRep').val();
+                    fichaExercicio.QuantidadeSerie = $('#formQtdSerie').val();
+                    fichaExercicio.Exercicio.ID = $('#formExercicios').val();
+                    fichaExercicio.Exercicio.Nome = $('#formExercicios option:selected').text();
+
+                    serie.ListaFicha[index].ListaFichaExercicio.push(fichaExercicio);
+
+                    console.log("btnAddFichaExercicio", serie);
+
+                    $('#formExercicios').val("");
+                    $('#formQtdSerie').val("");
+                    $('#formRep').val("");
+                    $('#formCarga').val("");
+                    $('#formObs').val("");
+
+                    MontarTabContent(serie.ListaFicha[index].ListaFichaExercicio, $('#list-ex-' + index + ''));
+                    $('#modalCadFichaExercicio').modal('hide');
+                }
+            });
+
+            $('#list-tab-fichas').on('shown.bs.tab', function(e) {
+                var index = Number($('#list-tab-fichas a.active').attr('data-index'));
+                MontarTabContent(serie.ListaFicha[index].ListaFichaExercicio, $('#list-ex-' + index + ''));
+            })
+
+            $.ajax({
+                url: 'http://localhost:56619/api/Admin/RecuperarTodasListas',
+                type: 'GET',
+                success: function(retorno) {
+                    console.log(retorno);
+                    MontarCombo(retorno.ListaTipoGrupoFicha, $('#formTipoGrupoSerie'));
+                    MontarCombo(retorno.ListaExercicio, $('#formExercicios'));
+                    MontarCombo(retorno.ListaTipoObservacao, $('#formObs'));
+                    MontarCheckbox(retorno.ListaTipoFicha, $('.divChecks'), true);
+
+                    $('input[type=checkbox]').bind('change', function() {
+                        _ID = Number($(this).attr('data-index')) + 1;
+
+                        if ($(this).is(':checked')) {
+                            openModal($("#modalCadFicha"), $(this).parent().find('label').html());
+                        } else {
+                            $('div .form-check').next().find('input[id=check' + _ID + ']').attr('disabled', true);
+                            removerFicha();
+                            MontarTabList(serie.ListaFicha, $('#list-tab-fichas'), $("#nav-tabContent"));
+                            MontarTabListOnly(serie.ListaFicha, $('#list-tab-fichas'));
+                            //var index = _ID - 1;
+                            //MontarTabContent(serie.ListaFicha[index].ListaFichaExercicio, $('#list-ex-' + index + ''));
+                        }
+                    });
+                },
+                error: function(retorno) {}
+            });
+
+            $.ajax({
+                url: 'http://localhost:56619/api/Usuario/Get/1',
+                type: 'GET',
+                success: function(retorno) {
+                    $("#formID").val(retorno.ID);
+                    grupos(getUsuario());
+                },
+                error: function(retorno) {}
+            });
+
+            $("#btnAddSerie").click(function() {
+                serie.Usuario.ID = $("#formID").val();
+                console.log(serie);
+                $.ajax({
+                    url: 'http://localhost:56619/api/Grupo/Adicionar',
+                    type: 'POST',
+                    data: serie,
+                    success: function(retorno) {
+                        console.log("Grupo/Adicionar", retorno);
+                        if (retorno) toast.init("Série Cadastrada");
+                        else toast.init("Série Não Cadastrada");
+                        //Montar(retorno, $('#tableSerie'), false);
+                    },
+                    error: function(retorno) {}
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

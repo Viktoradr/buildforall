@@ -1,0 +1,8 @@
+::-webkit-scrollbar {
+    width: 0;
+}
+
+html,
+main {
+    background-color: #fff;
+}

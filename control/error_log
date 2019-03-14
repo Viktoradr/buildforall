@@ -1,0 +1,105 @@
+[01-Dec-2017 14:12:40 America/Chicago] PHP Warning:  require_once(packages/PHPMailer/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 14:12:40 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'packages/PHPMailer/PHPMailerAutoload.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 14:14:53 America/Chicago] PHP Warning:  require_once(PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 14:14:53 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'PHPMailerAutoload.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 14:20:11 America/Chicago] PHP Warning:  require_once(packages/PHPMailer/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 14:20:11 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'packages/PHPMailer/PHPMailerAutoload.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 14:21:21 America/Chicago] PHP Warning:  require_once(packages/PHPMailer/class.phpmailer.php.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 14:21:21 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'packages/PHPMailer/class.phpmailer.php.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 14:49:28 America/Chicago] PHP Warning:  require_once(packages/PHPMailer/class.phpmailer.php.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 14:49:28 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'packages/PHPMailer/class.phpmailer.php.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 15:17:31 America/Chicago] PHP Warning:  require_once(packages/PHPMailer/class.phpmailer.php.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 15:17:31 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'packages/PHPMailer/class.phpmailer.php.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 15:20:44 America/Chicago] PHP Warning:  require_once(packages/PHPMailer/class.phpmailer.php.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 15:20:44 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'packages/PHPMailer/class.phpmailer.php.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 15:23:07 America/Chicago] PHP Warning:  require_once(packages/PHPMailer/class.phpmailer.php.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 15:23:07 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'packages/PHPMailer/class.phpmailer.php.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 15:23:44 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:11:28 America/Chicago] PHP Warning:  require_once(/public_html/packages/PHPMailer/class.phpmailer.php.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:11:28 America/Chicago] PHP Fatal error:  require_once(): Failed opening required '/public_html/packages/PHPMailer/class.phpmailer.php.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:13:30 America/Chicago] PHP Warning:  require_once(/home/build047/ublic_html/packages/PHPMailer/class.phpmailer.php.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:13:30 America/Chicago] PHP Fatal error:  require_once(): Failed opening required '/home/build047/ublic_html/packages/PHPMailer/class.phpmailer.php.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:14:12 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:15:25 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:16:08 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:20:05 America/Chicago] PHP Warning:  require_once(PHPMailer/class.phpmailer.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:20:05 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'PHPMailer/class.phpmailer.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:21:01 America/Chicago] PHP Warning:  require_once(packages/PHPMailer/class.phpmailer.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:21:01 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'packages/PHPMailer/class.phpmailer.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:21:27 America/Chicago] PHP Warning:  require_once(packages/PHPMailer/class.phpmailer.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:21:27 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'packages/PHPMailer/class.phpmailer.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:24:04 America/Chicago] PHP Warning:  require_once(public_html/packages/PHPMailer/class.phpmailer.php): failed to open stream: No such file or directory in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:24:04 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'public_html/packages/PHPMailer/class.phpmailer.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/control/contato.php on line 3
+[01-Dec-2017 16:31:50 America/Chicago] PHP Parse error:  syntax error, unexpected '$email' (T_VARIABLE), expecting ',' or ';' in /home/build047/public_html/control/contato.php on line 12
+[01-Dec-2017 16:32:27 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/build047/public_html/control/contato.php:38) in /home/build047/public_html/control/contato.php on line 39
+[01-Dec-2017 16:49:07 America/Chicago] PHP Fatal error:  Class 'SMTP' not found in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1520
+[01-Dec-2017 16:52:56 America/Chicago] PHP Fatal error:  Class 'SMTP' not found in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1520
+[01-Dec-2017 16:54:53 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/build047/public_html/packages/PHPMailer/get_oauth_token.php on line 18
+[01-Dec-2017 16:54:53 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/build047/public_html/packages/PHPMailer/get_oauth_token.php on line 18
+[01-Dec-2017 16:54:53 America/Chicago] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/packages/PHPMailer/get_oauth_token.php on line 18
+[01-Dec-2017 16:56:30 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/build047/public_html/packages/PHPMailer/get_oauth_token.php on line 18
+[01-Dec-2017 16:56:30 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/build047/public_html/packages/PHPMailer/get_oauth_token.php on line 18
+[01-Dec-2017 16:56:30 America/Chicago] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/php56/lib/php') in /home/build047/public_html/packages/PHPMailer/get_oauth_token.php on line 18
+[01-Dec-2017 17:00:46 America/Chicago] PHP Fatal error:  Class 'SMTP' not found in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1520
+[01-Dec-2017 17:12:04 America/Chicago] PHP Fatal error:  Class 'SMTP' not found in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1520
+[01-Dec-2017 17:13:01 America/Chicago] PHP Fatal error:  Class 'SMTP' not found in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1520
+[01-Dec-2017 17:25:44 America/Chicago] PHP Fatal error:  Class 'PHPMailer' not found in /home/build047/public_html/packages/PHPMailer/class.phpmaileroauth.php on line 27
+[01-Dec-2017 17:37:02 America/Chicago] PHP Fatal error:  Class 'PHPMailer' not found in /home/build047/public_html/control/contato.php on line 10
+[01-Dec-2017 17:38:35 America/Chicago] PHP Fatal error:  Class 'PHPMailer' not found in /home/build047/public_html/control/contato.php on line 10
+[01-Dec-2017 17:43:54 America/Chicago] PHP Fatal error:  Uncaught exception 'phpmailerException' with message 'SMTP Error: Could not connect to SMTP host.' in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php:1678
+Stack trace:
+#0 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1540): PHPMailer->smtpConnect(Array)
+#1 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1335): PHPMailer->smtpSend('Date: Fri, 1 De...', '\n<b>Nome:</b>  ...')
+#2 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1213): PHPMailer->postSend()
+#3 /home/build047/public_html/control/contato.php(40): PHPMailer->send()
+#4 {main}
+  thrown in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1678
+[01-Dec-2017 17:46:45 America/Chicago] PHP Fatal error:  Uncaught exception 'phpmailerException' with message 'SMTP Error: Could not connect to SMTP host.' in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php:1678
+Stack trace:
+#0 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1540): PHPMailer->smtpConnect(Array)
+#1 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1335): PHPMailer->smtpSend('Date: Fri, 1 De...', '\n<b>Nome:</b>  ...')
+#2 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1213): PHPMailer->postSend()
+#3 /home/build047/public_html/control/contato.php(40): PHPMailer->send()
+#4 {main}
+  thrown in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1678
+[01-Dec-2017 18:42:37 America/Chicago] PHP Fatal error:  Uncaught exception 'phpmailerException' with message 'SMTP Error: Could not connect to SMTP host.' in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php:1678
+Stack trace:
+#0 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1540): PHPMailer->smtpConnect(Array)
+#1 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1335): PHPMailer->smtpSend('Date: Fri, 1 De...', '\n<b>Nome:</b>  ...')
+#2 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1213): PHPMailer->postSend()
+#3 /home/build047/public_html/control/contato.php(40): PHPMailer->send()
+#4 {main}
+  thrown in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1678
+[01-Dec-2017 18:44:28 America/Chicago] PHP Fatal error:  Uncaught exception 'phpmailerException' with message 'SMTP Error: Could not connect to SMTP host.' in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php:1678
+Stack trace:
+#0 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1540): PHPMailer->smtpConnect(Array)
+#1 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1335): PHPMailer->smtpSend('Date: Fri, 1 De...', '\n<b>Nome:</b>  ...')
+#2 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1213): PHPMailer->postSend()
+#3 /home/build047/public_html/control/contato.php(40): PHPMailer->send()
+#4 {main}
+  thrown in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1678
+[01-Dec-2017 18:58:37 America/Chicago] PHP Fatal error:  Uncaught exception 'phpmailerException' with message 'SMTP Error: Could not connect to SMTP host.' in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php:1678
+Stack trace:
+#0 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1540): PHPMailer->smtpConnect(Array)
+#1 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1335): PHPMailer->smtpSend('Date: Fri, 1 De...', '\n<b>Nome:</b>  ...')
+#2 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1213): PHPMailer->postSend()
+#3 /home/build047/public_html/control/contato.php(44): PHPMailer->send()
+#4 {main}
+  thrown in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1678
+[01-Dec-2017 18:59:43 America/Chicago] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.hostgator.com.br' did not match expected CN=`mail.buildforall.com.br' in /home/build047/public_html/packages/PHPMailer/class.smtp.php on line 369
+[01-Dec-2017 18:59:43 America/Chicago] PHP Fatal error:  Uncaught exception 'phpmailerException' with message 'SMTP Error: Could not connect to SMTP host.' in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php:1678
+Stack trace:
+#0 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1540): PHPMailer->smtpConnect(Array)
+#1 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1335): PHPMailer->smtpSend('Date: Fri, 1 De...', '\n<b>Nome:</b>  ...')
+#2 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1213): PHPMailer->postSend()
+#3 /home/build047/public_html/control/contato.php(44): PHPMailer->send()
+#4 {main}
+  thrown in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1678
+[01-Dec-2017 19:00:21 America/Chicago] PHP Fatal error:  Uncaught exception 'phpmailerException' with message 'SMTP Error: Could not connect to SMTP host.' in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php:1678
+Stack trace:
+#0 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1540): PHPMailer->smtpConnect(Array)
+#1 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1335): PHPMailer->smtpSend('Date: Fri, 1 De...', '\n<b>Nome:</b>  ...')
+#2 /home/build047/public_html/packages/PHPMailer/class.phpmailer.php(1213): PHPMailer->postSend()
+#3 /home/build047/public_html/control/contato.php(44): PHPMailer->send()
+#4 {main}
+  thrown in /home/build047/public_html/packages/PHPMailer/class.phpmailer.php on line 1678

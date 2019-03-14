@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/bootstrap-table-develop/bootstrap-table.min.css" />
+    <script src="assets/bootstrap-table-develop/bootstrap-table.min.js"></script>
+
+
+    <title>Folha de Ponto</title>
+</head>
+
+<style>
+    .breadcrumb {
+        border-radius: 0;
+    }
+    
+    .btnMostrar {
+        margin-top: 45px;
+    }
+    
+    .td-feriado {
+        background-color: darkslategrey;
+        text-align: center;
+        text-transform: uppercase;
+        color: white;
+    }
+    
+    @media screen and (max-width: 460px) {
+        .jumbotron {
+            padding-top: 10px;
+        }
+        .btnMostrar {
+            margin-top: 15px;
+        }
+        .btn {
+            width: 100%;
+        }
+        th,
+        tr,
+        td {
+            text-align: center;
+        }
+        .fixed-table-container tbody td .th-inner,
+        .fixed-table-container thead th .th-inner {
+            padding: 8px 3px 8px 3px;
+        }
+        .bootstrap-table .table:not(.table-condensed)>tbody>tr>td {
+            padding: 4px;
+        }
+    }
+    
+    @media screen and (max-width: 375px) {
+        .jumbotron .container h1 {
+            font-size: 2.8em;
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+    var lista = [];
+    var temp = [];
+    var feriados = new Array();
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function getLogica(date2) {
+        const dt = new Date();
+        var ano = $("#ddlano option:selected").val();
+        var mes = $("#ddlmes option:selected").val();
+        var ultimoDia = new Date(ano, mes, 0);
+
+        var isEstag = $("#ddlestag option:selected").val() == 1;
+        var horaEntrada = isEstag ? 10 : 8;
+        var horaSaida = isEstag ? 17 : 18;
+
+        for (i = 0; i < ultimoDia.getDate(); i++) {
+            var obj = new Object();
+            //var n = isEstag ? getRandomInt(0, 12) : getRandomInt(7, 17);
+            var n = getRandomInt(7, 17);
+            var h = getRandomInt(10, 53);
+
+            if (temp != n) {
+                const e1 = new Date(date2.getFullYear(), 1, 30, parseInt(horaEntrada), 0, 0);
+                const e2 = new Date(date2.getFullYear(), 1, 30, 12, 0, 0);
+                const s1 = new Date(date2.getFullYear(), 1, 30, 13, 0, 0);
+                const s2 = new Date(date2.getFullYear(), 1, 30, parseInt(horaSaida), 0, 0);
+
+                if (!isEstag) {
+                    e1.setMinutes(n);
+
+                    if (n >= 12) {
+                        n = n - 12;
+                        s2.setMinutes(n);
+                    } else {
+
+                        console.log(n);
+                        n = 12 - n;
+                        s2.setMinutes(-n);
+                        console.log(n, s2);
+
+                        if (s2.getHours() == 17) {
+                            s2.setHours(18);
+                            s2.setMinutes(getRandomInt(0, 5));
+                            console.log(s2);
+                        }
+                    }
+                } else {
+                    if (n >= 12) {
+                        n = n - 12;
+                        e1.setMinutes(n);
+                        s2.setMinutes(-n);
+                    } else {
+                        e1.setMinutes(n);
+                        s2.setMinutes(-n);
+                    }
+                }
+
+                obj.id = i + 1;
+
+                obj.e1 = (e1.getHours() < 10 ? "0" + e1.getHours() : e1.getHours()) + ":" +
+                    (e1.getMinutes() < 10 ? "0" + e1.getMinutes() : e1.getMinutes());
+
+                obj.s1 = e2.getHours() + ":" + (h < 10 ? "0" + h : h);
+
+                obj.e2 = s1.getHours() + ":" + (h < 10 ? "0" + h : h);
+
+                obj.s2 = s2.getHours() + ":" + (s2.getMinutes() < 10 ? "0" + s2.getMinutes() : s2.getMinutes());
+
+
+                var x = (s2.getHours() - e1.getHours());
+                var y = (s2.getMinutes() > e1.getMinutes() ? s2.getMinutes() - e1.getMinutes() : e1.getMinutes() - s2.getMinutes());
+                obj.total = (x < 10 ? "0" + x : x) + ":" + (y < 10 ? "0" + y : y);
+
+                lista.push(obj);
+            }
+        }
+    }
+
+    function xmlToJson(xml) {
+        var obj = {};
+
+        if (xml.nodeType == 1) {
+            if (xml.attributes.length > 0) {
+                obj["@attributes"] = {};
+                for (var j = 0; j < xml.attributes.length; j++) {
+                    var attribute = xml.attributes.item(j);
+                    obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+                }
+            }
+        } else if (xml.nodeType == 3) {
+            obj = xml.nodeValue;
+        }
+
+        if (xml.hasChildNodes()) {
+            for (var i = 0; i < xml.childNodes.length; i++) {
+                var item = xml.childNodes.item(i);
+                var nodeName = item.nodeName;
+
+                if (typeof(obj[nodeName]) == "undefined") {
+                    obj[nodeName] = xmlToJson(item);
+
+                } else {
+
+                    if (typeof(obj[nodeName].push) == "undefined") {
+                        var old = obj[nodeName];
+                        obj[nodeName] = [];
+                        obj[nodeName].push(old);
+                    }
+                    obj[nodeName].push(xmlToJson(item));
+                }
+            }
+        }
+
+        return obj;
+    };
+
+    function getFeriados(url) {
+        $.ajax({
+            type: "GET",
+            url: url,
+            contentType: "application/xml; charset=utf-8",
+            dataType: "xml",
+            success: function(xml) {
+
+                $.each(xmlToJson(xml), function(i, item) {
+                    temp.push(item);
+                });
+
+                $.each(temp[0].event, function(i, item) {
+                    var x = JSON.stringify(item.date).replace("#", "").replace("{", "").replace("}", "").split(":");
+                    var y = JSON.stringify(item.name).replace("#", "").replace("{", "").replace("}", "").split(":");
+                    var z = JSON.stringify(item.type).replace("#", "").replace("{", "").replace("}", "").split(":");
+
+                    var o = new Object();
+                    o.data = x[1];
+                    var dt = x[1].split("/");
+                    dia = dt[0];
+                    o.dia = dia.replace('"', "");
+                    o.mes = dt[1];
+                    o.ano = dt[2].replace("", '"');
+                    o.nome = y[1];
+                    o.tipo = z[1];
+
+                    feriados.push(o);
+                });
+
+
+                $('#table').bootstrapTable('load', lista);
+
+                var array = [];
+                var realArray = $.makeArray(feriados); //Lista com todos os feriados do ano
+
+                $.map(realArray, function(item, i) {
+                    //array para comparar o mes atual com o da lista de feriados
+                    if ($("#ddlmes option:selected").val() == parseInt(item.mes)) {
+                        array.push(parseInt(item.dia));
+                        var position = (item.dia - 1);
+                        $("#table tbody tr[data-index=" + position + "] td").text(JSON.parse(item.nome) + " - " + JSON.parse(item.tipo));
+                        $("#table tbody tr[data-index=" + position + "] td").addClass("td-feriado");
+                    }
+                });
+
+                //metodos para dar merge nas linhas da tabela que possuem feriados      
+                lista.forEach(function(item) {
+                    if (jQuery.inArray(item.id, array) != '-1') {
+                        var position = (item.id - 1);
+                        $('#table').bootstrapTable('mergeCells', {
+                            index: position,
+                            field: 'id',
+                            colspan: 6,
+                            rowspan: 1,
+                        });
+                    }
+                });
+
+                getDiaSemana().forEach(function(item) {
+                    if (item.week == "Sábado" || item.week == "Domingo") {
+                        var position = (item.dia - 1);
+                        $("#table tbody tr[data-index=" + position + "] td").text(item.week);
+                        $("#table tbody tr[data-index=" + position + "] td").addClass("td-feriado");
+                        $('#table').bootstrapTable('mergeCells', {
+                            index: position,
+                            field: 'id',
+                            colspan: 6,
+                            rowspan: 1,
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+    function getDiaSemana() {
+        var lista = [];
+        var ano = $("#ddlano option:selected").val();
+        var mes = $("#ddlmes option:selected").val();
+
+        var ultimoDia = new Date(ano, mes, 0);
+
+        for (i = 1; i <= ultimoDia.getDate(); i++) {
+            //-1 no mes é por causa que quando é criado a dt ela incrementa o mes
+            const dt = new Date(ano, mes - 1, i);
+            var obj = new Object();
+            obj.dia = i;
+            obj.week = weekday(dt.getDay());
+            lista.push(obj);
+        }
+        return lista;
+    }
+
+    function weekday(day) {
+        var weekday = new Array(7);
+        weekday[0] = "Domingo";
+        weekday[1] = "Segunda";
+        weekday[2] = "Terça";
+        weekday[3] = "Quarta";
+        weekday[4] = "Quinta";
+        weekday[5] = "Sexta";
+        weekday[6] = "Sábado";
+        return weekday[day];
+    }
+
+    function montarTabela(date, ano) {
+        $(".labelMes").text("Mês de Referência: " + $("#ddlmes option:selected").val());
+        $(".labelAno").text("Ano de Referência: " + ano);
+        var url = "https://api.calendario.com.br/?ano=" + ano + "&estado=RJ&cidade=RIO_DE_JANEIRO&token=dmlrdG9yX3NxdWFkQGhvdG1haWwuY29tJmhhc2g9NjIzNjk2MjU="
+        getFeriados(url);
+        getLogica(date);
+    }
+
+    $(function() {
+        const dt = new Date();
+        const _year = dt.getUTCFullYear();
+        const _month = dt.getMonth() + 1;
+
+        var ultimoDia = new Date(dt.getFullYear(), _month, 0);
+
+        document.getElementById('ddlmes').value = _month; //set dll mes com o mes atual
+        //POPULAR COMBO DO ANO
+        var ini = (_year - 2);
+        var fim = (_year + 10);
+        for (i = ini; i <= fim; i++) {
+            if (i == _year) {
+                $('#ddlano').append($("<option selected></option>")
+                    .attr("value", i)
+                    .text(i));
+            } else {
+                $('#ddlano').append($("<option></option>")
+                    .attr("value", i)
+                    .text(i));
+            }
+        }
+        montarTabela(dt, _year);
+
+        $(".btnMostrar").click(function() {
+            lista = [];
+            temp = [];
+            feriados = new Array();
+            var ano = $("#ddlano option:selected").text();
+            var mes = $("#ddlmes option:selected").val();
+            const date = new Date(ano, mes, 0);
+            $("#table").bootstrapTable('removeAll');
+            montarTabela(date, ano);
+        });
+    });
+</script>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="http://www.buildforall.com.br">Build For All</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://www.buildforall.com.br">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Folha de Ponto</h1>
+
+                <form>
+                    <div class="form-row">
+                        <div class="col-xs-12 col-md-6 mb-3">
+                            <p class="lead">Estagiário?</p>
+                            <select class="form-control" id="ddlestag">
+                                <option value="0">Não</option>
+                                <option value="1">Sim</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-xs-12 col-md-5 mb-3">
+                            <p class="lead labelMes">Mês de referencia</p>
+                            <select class="form-control" id="ddlmes">
+                                <option value="1">Janeiro</option>
+                                <option value="2">Fevereiro</option>
+                                <option value="3">Março</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Maio</option>
+                                <option value="6">Junho</option>
+                                <option value="7">Julho</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Setembro</option>
+                                <option value="10">Outubro</option>
+                                <option value="11">Novembro</option>
+                                <option value="12">Dezembro</option>
+                            </select>
+                        </div>
+
+                        <div class="col-xs-12 col-md-5 mb-3">
+                            <p class="lead labelAno">Ano de referencia</p>
+                            <select class="form-control" id="ddlano">
+                            </select>
+                        </div>
+
+                        <div class="col-xs-12 col-md-2 mb-3">
+                            <button type="button" class="btn btn-primary btnMostrar">Mostrar</button>
+                        </div>
+                    </div>
+                </form>
+
+                <table class="table" id="table" data-toggle="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" data-field="id">#</th>
+                            <th scope="col" data-field="e1">Entrada</th>
+                            <th scope="col" data-field="s1">Saída</th>
+                            <th scope="col" data-field="e2">Entrada</th>
+                            <th scope="col" data-field="s2">Saída</th>
+                            <th scope="col" data-field="total">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,516 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+
+/* 
+    Created on : 23/11/2017, 10:07:41
+    Author     : vikto
+*/
+
+@import "../assets/fonts/proxima-nova/font-proxima-nova.css";
+@import "../assets/fonts/helvetica/font-helvetica.css";
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+@import url("http://fonts.googleapis.com/css?family=Abel");
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background: rgba(238, 238, 238, 1.0);
+    /*rgba(255,0,0,0.8); */
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 0, 0, 0.4);
+}
+
+a,
+a:hover,
+a:active,
+a:after,
+a:before,
+a:focus,
+a:link,
+a:visited,
+button.navbar-toggler {
+    outline: none;
+}
+
+section {
+    padding-top: 100px;
+}
+
+h1 {
+    font-family: 'Helvetica';
+}
+
+textarea {
+    resize: none;
+}
+
+.navbar {
+    min-height: 100px;
+}
+
+@media (max-width: 767px) {
+    section {
+        padding-top: 50px;
+    }
+    .navbar {
+        min-height: 50px;
+    }
+    .navbar-brand {
+        height: 50px;
+    }
+}
+
+.navbar-brand {
+    height: 100px;
+    padding-top: 15px;
+    font-size: 1.9em;
+    line-height: 20px;
+}
+
+.img-brand {
+    max-height: 75px;
+}
+
+.navbar-nav>li>a {
+    padding-top: 40px;
+    padding-bottom: 25px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.navbar-nav>li>a>i {
+    font-size: 1.4em;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+.navbar-nav>li>a:hover>i {
+    color: #1b6d85;
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav>li>a {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-nav>li {
+        text-align: center;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-nav>li:first-of-type {
+        padding-top: 15px;
+    }
+    .navbar-nav>li:last-of-type {
+        padding-bottom: 20px;
+    }
+    .navbar-header {
+        padding-top: 0px;
+    }
+}
+
+.nav-pills {
+    float: right;
+    margin-right: 10px;
+}
+
+.nav-pills>li>a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    line-height: 20px;
+    font-size: 1.2em;
+    font-family: 'Helvetica Bold';
+    color: #777;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: left;
+    padding: 9px 10px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 12px;
+    background-color: transparent;
+    background-image: none;
+    border: 0px solid transparent;
+    border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+    .nav-pills>li {}
+    .nav-pills>li>a {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        line-height: 10px;
+        font-size: 1.3em;
+    }
+    .navbar-toggle {
+        padding: 9px 10px;
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-bottom: 15px;
+        background-color: transparent;
+        background-image: none;
+        border: 0px solid transparent;
+        border-radius: 4px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-nav.hidden-sm {
+        display: block !important;
+        top: 101px;
+        right: 0;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .navbar-nav.hidden-sm>li>a {
+        height: 30px;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
+    }
+}
+
+.cards {
+    /*margin: 5%;*/
+    font-family: 'Proxima Nova';
+}
+
+.cards a {
+    color: white;
+    text-decoration: none;
+    border: 0;
+}
+
+.cards .col-lg-3,
+.cards .col-lg-4 {
+    padding: 0px;
+    /*padding: 1px;*/
+}
+
+.box {
+    width: 100%;
+    height: 320px;
+}
+
+.box img {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    z-index: 1;
+}
+
+.box .overlay {
+    opacity: 0;
+    width: 100%;
+    height: 320px;
+    z-index: 2;
+    position: absolute;
+}
+
+.box a {
+    width: 100%;
+    height: 320px;
+    text-decoration: none;
+    display: inline-block;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+.box .overlay:hover {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 3;
+}
+
+.box a:hover {
+    border: 1px solid #00DFDF;
+    transition: all 0.5s ease-in-out;
+}
+
+.box .box-title {
+    font-family: 'Proxima Nova';
+    color: white;
+}
+
+.box .box-title h3 {
+    font-size: 1.8em;
+}
+
+.box .box-title p {
+    font-size: 1.4em;
+}
+
+@media (min-width: 428px) and (max-width: 767px) {
+    .cards .col-xs-12 {
+        width: 50%;
+    }
+    .box,
+    .box img,
+    .box .overlay,
+    .box a {
+        height: 290px;
+    }
+}
+
+@media (max-width: 428px) {
+    .box,
+    .box img,
+    .box .overlay,
+    .box a {
+        height: 360px;
+    }
+}
+
+@media (min-width: 943px) and (max-width: 991px) {
+    .box,
+    .box img,
+    .box .overlay,
+    .box a {
+        height: 320px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 1200px) {}
+
+.fade {
+    opacity: 0;
+    transition: opacity .4s ease;
+    -moz-transition: opacity .4s ease;
+    -webkit-transition: opacity .4s ease;
+}
+
+.fade:hover {
+    opacity: 1;
+}
+
+.bg-grey {
+    background-color: #eee;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+.bg-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.c-white {
+    color: white;
+}
+
+.c-black {
+    color: black;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.p-50t {
+    padding-top: 50px;
+}
+
+.p-70t {
+    padding-top: 70px;
+}
+
+.p-50b {
+    padding-bottom: 50px;
+}
+
+.section-card {
+    padding: 0px 50px 50px 50px;
+    border-radius: 30px;
+}
+
+section#menu3 {
+    margin-top: 0px !important;
+}
+
+.section-container {
+    padding-bottom: 150px;
+}
+
+.section-container .jumbotron {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+#menu0 {
+    background: url('../img/background/bg3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+#menu0 .section-container {
+    padding-bottom: 0;
+}
+
+#menu3 {
+    background: url('../img/background/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    padding-top: 20px;
+}
+
+.jumbotron p {
+    font-size: 1.2em;
+}
+
+.about-title {
+    font-family: 'Abel';
+    font-size: 3em;
+}
+
+.about-history {
+    font-family: 'Abel';
+    font-size: 1.8em !important;
+}
+
+.email h4 {
+    color: #777;
+}
+
+form #btnEnviar {
+    width: 100%;
+}
+
+
+/* ------------ PAGES ----------------*/
+
+.big-cards {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: -45px;
+    margin-bottom: 3%;
+}
+
+.big-cards img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2px;
+}
+
+@media (max-width: 767px) {
+    .big-cards {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 5%;
+    }
+}
+
+.section-pages .jumbotron {
+    background-color: white;
+    padding-bottom: 0;
+}
+
+.section-pages .jumbotron .container {
+    padding-top: 50px;
+    padding-left: 16%;
+    padding-right: 16%;
+    text-align: left;
+}
+
+@media (max-width: 992px) {
+    .section-pages .jumbotron {
+        padding-top: 0;
+    }
+    .section-pages .jumbotron .container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+.section-pages .jumbotron h1 {
+    padding-bottom: 15px;
+}
+
+.section-pages .jumbotron h4 {
+    font-family: 'Helvetica Bold';
+    font-size: 1.6em;
+}
+
+.section-pages .jumbotron span {
+    font-size: 1.4em;
+    font-family: 'Helvetica Light';
+    color: #777;
+}
+
+.section-pages .jumbotron .ano {
+    font-family: 'Helvetica Bold';
+    padding-top: 15px;
+}
+
+section.reproduzir {
+    padding-top: 60px;
+}

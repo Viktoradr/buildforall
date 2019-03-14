@@ -1,0 +1,285 @@
+/*---------- PORTFOLIO ----------*/
+
+.portfolioContainer {
+    width: 100%;
+    position: relative;
+    list-style: none;
+    opacity: 1;
+}
+
+.portfolioContainer li img {
+    width: 100%;
+    display: block;
+}
+
+
+/* 4 Columns */
+
+@media (max-width:992px) {
+    .portfolioContainer.columns-4 li {
+        width: 50%;
+    }
+}
+
+@media (min-width:992px) {
+    .portfolioContainer.columns-4 li {
+        width: 25%;
+    }
+}
+
+.portfolioContainer.margin li {
+    padding: 5px;
+    overflow: hidden;
+}
+
+.portfolioContainer.nomargin li {
+    padding: 0;
+}
+
+.port-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.isotope-item {
+    z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.isotope,
+.isotope .isotope-item {
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+
+.isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+
+/* Img Hover Effect */
+
+.portfolioContainer li {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolioContainer li a {
+    display: inline;
+    margin: auto;
+    padding: 0;
+    max-width: 100%;
+    height: auto;
+    color: #fff;
+    font-size: 16px;
+}
+
+.portfolioContainer li .item {
+    background: rgb(0, 0, 0);
+}
+
+.white-bg .portfolioContainer li .item,
+.portfolioContainer.white-hovers li .item {
+    background: rgb(255, 255, 255);
+}
+
+.portfolioContainer li:hover img {
+    opacity: .1;
+}
+
+.portfolioContainer li img,
+.portfolioContainer li:hover img {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.portfolioContainer li .info {
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    top: 52%;
+    right: 0;
+    padding: 40px;
+    text-align: center;
+    z-index: 2;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.portfolioContainer li:hover .info {
+    opacity: 1;
+}
+
+.portfolioContainer li .info h4 {
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.portfolioContainer.alt li .info h4 {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.portfolioContainer li .info p {
+    color: #eee;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 0;
+    font-size: 9px;
+    font-weight: 300;
+}
+
+.portfolioContainer.white-hovers li .info h4 {
+    color: #111;
+}
+
+.portfolioContainer.white-hovers li .info p {
+    color: #777;
+}
+
+.white-bg .portfolioContainer li .info h4 {
+    color: #111;
+}
+
+.white-bg .portfolioContainer li .info p {
+    color: #777;
+}
+
+.portfolioContainer li .info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.portfolioContainer li .info ul li {
+    display: inline;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.portfolioContainer li .info .date {
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 13px;
+}
+
+.portfolioContainer li .info i {
+    padding: 5px;
+    text-decoration: none;
+}
+
+.portfolioContainer li .info i:hover {
+    color: #fff;
+}
+
+.portfolioContainer li .info i,
+.portfolioContainer li .info i:hover {
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+
+/* Hover Effects */
+
+.portfolioContainer li .info.hover-top {
+    top: 20%
+}
+
+.portfolioContainer li:hover .info.hover-top {
+    top: 52%
+}
+
+.portfolioContainer li .info.hover-left {
+    left: -20%
+}
+
+.team-member:hover .team-member-detail.hover-left {
+    left: 0;
+}
+
+.portfolioContainer li .info.hover-right {
+    right: -20%
+}
+
+.team-member:hover .team-member-detail.hover-right {
+    right: 0;
+}
+
+.portfolioContainer li .info.hover-bottom {
+    top: 70%
+}
+
+.portfolioContainer li:hover .info.hover-bottom {
+    top: 52%
+}
+
+.portfolioContainer li:hover .item.white-bg:after {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.portfolioContainer li .item.white-bg h4 {
+    color: #111;
+}
+
+.portfolioContainer li .item.white-bg p {
+    color: #111;
+}
+
+.project-changer {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-changer li {
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+    line-height: 1;
+}
+
+.project-changer li a:hover {
+    color: #fff;
+}
+
+.project-changer li a,
+.project-changer li a:hover {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.project-video {
+    padding-bottom: 52.3%!important;
+}
+
+#project-slider img {
+    width: 100%;
+}
